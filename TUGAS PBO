@@ -1,0 +1,28 @@
+# Data Klinik Informatika Sehat
+data = {
+    "nama_klink": "Klinik Informatika Sehat",
+    "rekam_medis": [
+        {"id": 1, "bpm": 70},
+        {"id": 2, "bpm": 110},
+        {"id": 3, "bpm": 65},
+        {"id": 4, "bpm": 120},
+        {"id": 5, "bpm": 80},
+        {"id": 6, "bpm": 140},
+        {"id": 7, "bpm": 75}
+    ]
+} 
+
+# Fungsi analisis BPM nya ya adik"
+def analisa_kondisi(bpm):
+    if bpm < 60:
+        return "Rendah"
+    elif 60 <= bpm <= 100:
+        return "Normal"
+    else:
+        return "Tinggi"
+
+# proses setiap rekam medis pake for loop
+for idx, rekam in enumerate(data["rekam_medis"], start=1):
+    bpm = rekam["bpm"]
+    status = analisa_kondisi(bpm)
+    print(f"Data ke-{idx}: {bpm} BPM -> {status}")
